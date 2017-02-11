@@ -46,14 +46,14 @@ class OLE_1C
 
   def get_query
     query = @connect.NewObject('Query')
-    query.Text = 'ВЫБРАТЬ Продажи.Период, Продажи.Стоимость ИЗ РегистрНакопления.Продажи КАК Продажи'
-
-    query.SetParameter('Продажи.Период','11.02.2017')
-    result=query.Execute.Unload
+    query.Text = 'ВЫБРАТЬ Продажи.СуммаОстаток
+    ИЗ РегистрНакопления.Продажи.Остатки(КОНЕЦПЕРИОДА(&ДатаОтчета, ДЕНЬ), ) КАК Продажи'
+    query.SetParameter('ДатаОтчета', 'КонецДня(ТекущаяДата())');
+    result=query.Execute.Unload;
 
     sers=(0..result.Count).collect do |i|
       record=result.Get(i)
-    #  record.Get(0)
+      record.Get(0)
       puts record
     end
     #return result
