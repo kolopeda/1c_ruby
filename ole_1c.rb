@@ -48,9 +48,13 @@ class OLE_1C
     query = @connect.NewObject('Query')
     query.Text = 'ВЫБРАТЬ Продажи.СуммаОстаток
     ИЗ РегистрНакопления.Продажи.Остатки(КОНЕЦПЕРИОДА(&ДатаОтчета, ДЕНЬ), ) КАК Продажи'
-    query.SetParameter('ДатаОтчета', 'КонецДня(ТекущаяДата())');
-    result=query.Execute.Unload;
-    record=result.Get(0)
-    puts record
+    cur_date = @connect.CurrentDate()
+    query.SetParameter('ДатаОтчета', cur_date)
+    result = query.Execute.Unload;
+    record = result.Get(0)
+    record.Get(0)
+    return
+    end
+    #return result
   end
 end
