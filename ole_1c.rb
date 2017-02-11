@@ -6,7 +6,7 @@ class OLE_1C
 
   def initialize
     @connect = WIN32OLE.new 'V83.Application'
-    @connect.Connect("File=\"D:\InfoBase\"; Usr=\"Андрей\"; Pwd=\"8512481430\"")
+    @connect.Connect("File=\"D:\InfoBase\"; Usr=\"AAAAA\"; Pwd=\"0000\"")
     @connect.Visible = false
   end
 
@@ -47,7 +47,7 @@ class OLE_1C
   def get_query
     query = @connect.NewObject('Query')
     query.Text = 'ВЫБРАТЬ Продажи.Период, Продажи.Стоимость ИЗ РегистрНакопления.Продажи КАК Продажи'
-    #nom=@connect.ТекущаяУниверсальнаяДата()
+
     query.SetParameter('Продажи.Период','11.02.2017')
     result=query.Execute.Unload
 
