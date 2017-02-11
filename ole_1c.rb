@@ -54,7 +54,5 @@ class OLE_1C
     record = result.Get(0)
     record.Get(0)
     return
-  
-    #return result
   end
 end
