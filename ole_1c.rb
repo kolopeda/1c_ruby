@@ -50,7 +50,7 @@ class OLE_1C
     ИЗ РегистрНакопления.Продажи.Остатки(КОНЕЦПЕРИОДА(&ДатаОтчета, ДЕНЬ), ) КАК Продажи'
     cur_date = @connect.CurrentDate()
     query.SetParameter('ДатаОтчета', cur_date)
-    result = query.Execute.Unload;
+    result = query.Execute.Unload
     record = result.Get(0)
     record.Get(0)
     return
