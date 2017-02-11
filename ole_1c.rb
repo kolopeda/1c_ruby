@@ -50,12 +50,7 @@ class OLE_1C
     ИЗ РегистрНакопления.Продажи.Остатки(КОНЕЦПЕРИОДА(&ДатаОтчета, ДЕНЬ), ) КАК Продажи'
     query.SetParameter('ДатаОтчета', 'КонецДня(ТекущаяДата())');
     result=query.Execute.Unload;
-
-    sers=(0..result.Count).collect do |i|
-      record=result.Get(i)
-      record.Get(0)
-      puts record
-    end
-    #return result
+    record=result.Get(0)
+    puts record
   end
 end
