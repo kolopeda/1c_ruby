@@ -1,8 +1,7 @@
 {
   "inviteDomain":"astratime.online",
-  "backgroundColor":"#fff",
   "backgroundImageUrl":"https://isorepublic.com/wp-content/uploads/2022/10/iso-republic-abstract-wallpaper-soft-blur-1100x733.jpg",
   "logoClickUrl":"https://raw.githubusercontent.com/kolopeda/1c_ruby/master/watermark.svg",
-  "logoImageUrl":"https://raw.githubusercontent.com/kolopeda/1c_ruby/master/watermark.svg"
+  "logoImageUrl":"https://raw.githubusercontent.com/kolopeda/1c_ruby/master/watermark.svg",
   "appName":"Тайм конференции"
 }
